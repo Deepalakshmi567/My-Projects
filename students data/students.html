@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Standard Class Students Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e9ecef;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow-y: auto;
+        }
+        .data-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 600px;
+            height: 100%;
+            max-height: 90vh;
+            text-align: center;
+            overflow-y: auto;
+        }
+        input[type="text"], input[type="number"], input[type="date"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .submitted-data {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="data-container">
+        <h2>5 Standard Class Students Data</h2>
+        <form id="studentsForm">
+            <input type="text" id="name" placeholder="Name" required>
+            <input type="date" id="dob" placeholder="Date of Birth" required>
+            <input type="text" id="address" placeholder="Address" required>
+            <input type="text" id="phoneNumber" placeholder="Phone Number" required>
+            <input type="text" id="fatherName" placeholder="Father's Name" required>
+            <input type="text" id="motherName" placeholder="Mother's Name" required>
+            <h3>Subjects</h3>
+            <input type="number" id="tamil" placeholder="Marks in Tamil" required>
+            <input type="number" id="english" placeholder="Marks in English" required>
+            <input type="number" id="maths" placeholder="Marks in Maths" required>
+            <input type="number" id="science" placeholder="Marks in Science" required>
+            <input type="number" id="social" placeholder="Marks in Social" required>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="submittedData" class="submitted-data"></div>
+    </div>
+
+    <script>
+        document.getElementById('studentsForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Gather form data
+            var name = document.getElementById('name').value;
+            var dob = document.getElementById('dob').value;
+            var address = document.getElementById('address').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var fatherName = document.getElementById('fatherName').value;
+            var motherName = document.getElementById('motherName').value;
+            var tamil = parseFloat(document.getElementById('tamil').value);
+            var english = parseFloat(document.getElementById('english').value);
+            var maths = parseFloat(document.getElementById('maths').value);
+            var science = parseFloat(document.getElementById('science').value);
+            var social = parseFloat(document.getElementById('social').value);
+
+            // Calculate total marks and percentage
+            var totalMarks = tamil + english + maths + science + social;
+            var percentage = (totalMarks / 500) * 100; // Assuming total marks are 500
+
+            // Display submitted data
+            var submittedData = document.getElementById('submittedData');
+            submittedData.innerHTML = `
+                <h2>Submitted Data</h2>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Date of Birth:</strong> ${dob}</p>
+                <p><strong>Address:</strong> ${address}</p>
+                <p><strong>Phone Number:</strong> ${phoneNumber}</p>
+                <h3>Family Details</h3>
+                <p><strong>Father's Name:</strong> ${fatherName}</p>
+                <p><strong>Mother's Name:</strong> ${motherName}</p>
+                <h3>Subjects</h3>
+                <p><strong>Tamil:</strong> ${tamil}</p>
+                <p><strong>English:</strong> ${english}</p>
+                <p><strong>Maths:</strong> ${maths}</p>
+                <p><strong>Science:</strong> ${science}</p>
+                <p><strong>Social:</strong> ${social}</p>
+                <h3>Total Marks</h3>
+                <p><strong>Total Marks:</strong> ${totalMarks}</p>
+                <p><strong>Percentage:</strong> ${percentage.toFixed(2)}%</p>
+            `;
+        });
+    </script>
+</body>
+</html>
