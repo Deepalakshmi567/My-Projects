@@ -1,0 +1,134 @@
+.header{
+    text-align: center;
+}
+.h1,li,ul{
+    display: inline
+}
+li{
+    color: gray;
+    cursor: pointer;
+
+}
+li:hover{
+    color: white;
+}
+.box{
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    display: inline-block;
+    width:220px;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+.myimage1{
+    width:221px;
+    height:223px;
+    object-fit:cover;
+}
+.myimage2{
+    width:221px;
+    height:223px;
+    object-fit:cover;
+}
+.myimage3{
+    width:221px;
+    height:223px;
+    object-fit:cover;
+}
+.myimage4{
+    width:221px;
+    height:223px;
+    object-fit:cover;
+}
+.box:hover{
+    background-color: black;
+    color: white;
+
+}
+.foods{
+    text-align: center;
+    background-color: white;
+    margin-top:20px;
+    
+    
+}
+.one{
+    border-color: black;
+    color: white;
+    border-style: solid;
+    display: inline;
+    background-color: black;
+    cursor: pointer;
+}
+.two{
+    border-color: black;
+    color: white;
+    border-style: solid;
+    display: inline;
+    background-color: black;
+    cursor: pointer;
+}
+.three{
+    border-color: black;
+    color: white;
+    border-style: solid;
+    display: inline;
+    background-color: black;
+    cursor: pointer
+}
+.four{
+    border-color: black;
+    color: white;
+    border-style: solid;
+    display: inline;
+    background-color: black;
+    cursor: pointer;
+}
+
+.contact {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    padding:20px;
+    background-color: black;
+    margin-top:-5px;
+  
+     
+    
+}
+.table {
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top:-70px;
+    
+
+}
+
+input[type="text"] {
+    background-color: white;
+    color:black;
+    border: 1px solid white;
+    padding: 5px;
+    
+}
+.send-button {
+    background-color:yellow;
+    color: black;
+    padding-left: 60%;
+    padding-right: 60%; 
+    border-style: solid;
+    cursor: pointer;
+}
+
+
+
+
+
+
